@@ -1,3 +1,5 @@
+import { HomeData } from "./pages/home/home.data";
+import { HomeMethods } from "./pages/home/home.methods";
 import { LoginMethods } from "./pages/login/login.methods";
 import { SignupData } from "./pages/signUp/signUp.data";
 import { SignupMethods } from "./pages/signUp/signup.methods";
@@ -18,5 +20,12 @@ describe("template spec", () => {
     cy.visit("https://www.demoblaze.com/");
     cy.get('a[data-target="#signInModal"]').click();
     SignupMethods.signup(username, password);
+  });
+
+  it("products", () => {
+    cy.visit("https://www.demoblaze.com/");
+
+    HomeMethods.clickOnPhonesOption();
+    HomeMethods.clickOnProductLink(HomeData.phone.iphone6);
   });
 });
