@@ -2,11 +2,11 @@ import { LoginElements } from "./login.elements";
 
 export class LoginMethods {
   static insertUsername(username) {
-    LoginElements.textBoxes.username.type(username);
+    LoginElements.textBoxes.username.invoke("val", username);
   }
 
   static insertPassword(password) {
-    LoginElements.textBoxes.password.type(password);
+    LoginElements.textBoxes.password.invoke("val", password);
   }
 
   static clickOnLoginButton() {
@@ -15,7 +15,7 @@ export class LoginMethods {
 
   static login(username, password) {
     this.insertUsername(username);
-    this.insertPassword(username);
+    this.insertPassword(password);
     this.clickOnLoginButton();
   }
 }
