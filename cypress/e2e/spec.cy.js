@@ -1,28 +1,28 @@
-import { CartMethods } from "./pages/cart/cart.methods.cy";
-import { HomeData } from "./pages/home/home.data";
-import { HomeMethods } from "./pages/home/home.methods";
 import { LoginMethods } from "./pages/login/login.methods";
-import { ProductDetailsMethods } from "./pages/product-detail/productDetail.methods.cy";
-import { SignupData } from "./pages/signUp/signUp.data";
-import { SignupMethods } from "./pages/signUp/signup.methods";
+
+import { Logger } from "./utils/logger";
 
 describe("template spec", () => {
-  it.only("probe", () => {
-    cy.visit("https://www.demoblaze.com/");
-    cy.wait(15000);
-    CartMethods.clickOnDeleteLink("Nokia lumia 1520");
-  });
-
   it("login", () => {
     const username = "botija";
     const password = "123456";
+
+    Logger.stepNumber(1);
+    Logger.step("Navegar to Demoblaze");
     cy.visit("https://www.demoblaze.com/");
+
+    Logger.stepNumber(2);
+    Logger.step("Click on 'Login' link");
     cy.get('a[data-target="#logInModal"]').click();
+
+    Logger.stepNumber(3);
+    Logger.step(`Login with this credentials: "${username}/${password}"`);
     LoginMethods.login(username, password);
+    Logger.verification("Check success login");
     cy.get("a#nameofuser").contains("Welcome botija");
   });
 
-  it("Signup", () => {
+  /* it("Signup", () => {
     const username = "newUser1";
     const password = "esteesmipassword";
     cy.visit("https://www.demoblaze.com/");
@@ -35,7 +35,7 @@ describe("template spec", () => {
 
     HomeMethods.clickOnPhonesOption();
     HomeMethods.clickOnProductLink(HomeData.phone.iphone6);
-  });
+  });*/
 
   /*it("delete element", () => {
     HomeMethods.clickOnPhonesOption();

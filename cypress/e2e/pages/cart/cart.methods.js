@@ -1,4 +1,4 @@
-import { CartElement } from "./cart.element.cy";
+import { CartElement } from "./cart.elements.cy";
 
 export class CartMethods {
   static clickOnDeleteLink(productName) {
