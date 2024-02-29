@@ -1,5 +1,5 @@
-import { CommonPageData } from "./common-page.data.cy";
-import { CommonPageElements } from "./common-page.elements.cy";
+import { CommonPageData } from "./common-page.data";
+import { CommonPageElements } from "./common-page.elements.js";
 
 export class CommonPageMethods {
   static navigateToDemoPlaze() {
@@ -28,5 +28,11 @@ export class CommonPageMethods {
 
   static clickOnSignupOption() {
     CommonPageElements.topMenu.signup.click();
+  }
+
+  static alertInfo(textToCompare) {
+    cy.on("window:alert", (text) => {
+      expect(text).to.equal(textToCompare);
+    });
   }
 }

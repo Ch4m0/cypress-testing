@@ -16,7 +16,7 @@ export class SignupElements {
         return cy.contains("button", "Close").eq(1);
       },
       get signup() {
-        return cy.get("input#sign-password");
+        return cy.contains("button", "Sign up");
       },
     };
   }

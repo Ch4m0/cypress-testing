@@ -1,3 +1,4 @@
+import { CommonPageMethods } from "../common-page/common-page.methods";
 import { SignupElements } from "./signUp.elements";
 
 export class SignupMethods {
@@ -17,5 +18,9 @@ export class SignupMethods {
     this.insertUsername(username);
     this.insertPassword(password);
     this.clickOnSignupButton();
+  }
+
+  static signupSuccesful() {
+    CommonPageMethods.alertInfo("Sign up successful.");
   }
 }
