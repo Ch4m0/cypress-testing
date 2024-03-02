@@ -23,4 +23,8 @@ export class SignupMethods {
   static signupSuccesful() {
     CommonPageMethods.alertInfo("Sign up successful.");
   }
+
+  static signupFail() {
+    CommonPageMethods.alertInfo("This user already exist.");
+  }
 }
