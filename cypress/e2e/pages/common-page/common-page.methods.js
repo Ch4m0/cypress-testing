@@ -35,4 +35,8 @@ export class CommonPageMethods {
       expect(text).to.equal(textToCompare);
     });
   }
+
+  static checkSignedUser(username) {
+    CommonPageElements.signedUser.should("have.text", `Welcome ${username}`);
+  }
 }
