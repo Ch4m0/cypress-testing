@@ -29,4 +29,30 @@ describe(CommonPageData.testSuites.autenticacion, () => {
 
     CommonPageMethods.checkSignedUser(LoginData.validCredentials.username);
   });
+
+  it("Inicio de sesión Invalido", () => {
+    Logger.stepNumber(1);
+    Logger.step("Navegar a la página de inicio");
+    CommonPageMethods.navigateToDemoPlaze();
+
+    Logger.stepNumber(2);
+    Logger.step("Hacer clic en 'Log in' en la barra de navegación.");
+    CommonPageMethods.clickOnLoginOption();
+
+    Logger.stepNumber(3);
+    Logger.step("Ingresar un nombre de usuario y contraseña válidos");
+
+    LoginMethods.insertUsername(LoginData.validCredentials.username);
+    LoginMethods.insertPassword("contrasenaInvalida");
+
+    Logger.stepNumber(4);
+    Logger.step("Hacer clic en 'Log in' para iniciar sesión");
+    LoginMethods.clickOnLoginButton();
+
+    Logger.stepNumber(5);
+    Logger.verification(
+      "Verificar que se muestra un mensaje de error indicando que el inicio de sesión ha fallado"
+    );
+    LoginMethods.loginFail();
+  });
 });
