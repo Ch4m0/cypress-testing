@@ -13,7 +13,7 @@ import { Logger } from "../utils/logger";
 const { username, password } = LoginData.validCredentials;
 
 describe(CommonPageData.testSuites.catalogoYCompras, () => {
-  xit("Navegación por categorías", () => {
+  it("Navegación por categorías", () => {
     Logger.stepNumber(1);
     Logger.step("Iniciar sesión como usuario registrado");
 

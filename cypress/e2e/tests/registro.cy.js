@@ -4,7 +4,7 @@ import { CommonPageMethods } from "../pages/common-page/common-page.methods";
 import { SignupMethods } from "../pages/signUp/signup.methods";
 import { generateRandomString } from "../utils/helpers";
 
-xdescribe(CommonPageData.testSuites.registro, () => {
+describe(CommonPageData.testSuites.registro, () => {
   it("Registro de usuario valido", () => {
     const username = generateRandomString();
     const password = "s3cret";
