@@ -24,6 +24,10 @@ export class CommonPageElements {
       get signup() {
         return cy.contains("a", "Sign up");
       },
+
+      get logout() {
+        return cy.contains("a", "Log out");
+      },
     };
   }
 

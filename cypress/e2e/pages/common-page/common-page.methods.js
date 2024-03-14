@@ -3,6 +3,8 @@ import { CommonPageElements } from "./common-page.elements.js";
 
 export class CommonPageMethods {
   static navigateToDemoPlaze() {
+    cy.clearCookies();
+    cy.clearLocalStorage();
     cy.visit(CommonPageData.url);
   }
 
@@ -38,5 +40,13 @@ export class CommonPageMethods {
 
   static checkSignedUser(username) {
     CommonPageElements.signedUser.should("have.text", `Welcome ${username}`);
+  }
+
+  static logout() {
+    cy.get("body").then(($body) => {
+      if ($body.find("#logout2").length > 0) {
+        CommonPageElements.topMenu.logout.click();
+      }
+    });
   }
 }

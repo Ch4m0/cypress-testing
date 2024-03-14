@@ -5,7 +5,7 @@ import { LoginMethods } from "../pages/login/login.methods";
 import { Logger } from "../utils/logger";
 
 describe(CommonPageData.testSuites.autenticacion, () => {
-  it("Inicio de sesión válido", () => {
+  it.only("Inicio de sesión válido", () => {
     Logger.stepNumber(1);
     Logger.step("Navegar a la página de inicio");
     CommonPageMethods.navigateToDemoPlaze();
@@ -28,6 +28,10 @@ describe(CommonPageData.testSuites.autenticacion, () => {
     Logger.verification("validar Inicio de sesion exitoso");
 
     CommonPageMethods.checkSignedUser(LoginData.validCredentials.username);
+
+    Logger.postCondition("Hacer Logout");
+
+    CommonPageMethods.logout();
   });
 
   it("Inicio de sesión Invalido", () => {
