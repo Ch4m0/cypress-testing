@@ -1,4 +1,4 @@
-import { PlaceOrderElements } from "./place-order.elements.cy";
+import { PlaceOrderElements } from "./place-order.elements";
 
 export class PlaceOrderMethods {
   static insertName(name) {
@@ -31,5 +31,14 @@ export class PlaceOrderMethods {
 
   static clickOnPurchaseButton() {
     PlaceOrderElements.buttons.purchase.click();
+  }
+
+  static setDataForm({ name, country, city, creditCard, month, year }) {
+    this.insertName(name);
+    this.insertCountry(country);
+    this.insertCity(city);
+    this.insertCreditCard(creditCard);
+    this.insertMonth(month);
+    this.insertYear(year);
   }
 }

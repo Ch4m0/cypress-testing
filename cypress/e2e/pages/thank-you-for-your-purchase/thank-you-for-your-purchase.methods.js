@@ -1,4 +1,4 @@
-import { ThankYouForYourPurchaseElements } from "./thank-you-for-your-purchase.elements.cy";
+import { ThankYouForYourPurchaseElements } from "./thank-you-for-your-purchase.elements.js";
 
 export class ThankYouForYourPurchaseMethods {
   static clickOnOkButton() {
@@ -6,6 +6,6 @@ export class ThankYouForYourPurchaseMethods {
   }
 
   static verifyGreenCheckIcon() {
-    ThankYouForYourPurchaseElements.icons.success();
+    ThankYouForYourPurchaseElements.icons.success;
   }
 }
