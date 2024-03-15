@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 1,
+  "passes": 1,
+  "pending": 0,
+  "failures": 0,
+  "start": "2024-03-15T17:40:43.543Z",
+  "duration": 3865,
+  "file": "cypress/e2e/tests/autenticacion.cy.js"
+}
