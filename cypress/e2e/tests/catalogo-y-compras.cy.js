@@ -89,6 +89,12 @@ describe(CommonPageData.testSuites.catalogoYCompras, () => {
       ProductDetailsMethods.verifyProductAdded();
       CommonPageMethods.clickOnCartOption();
       CartMethods.verifyProductIsDisplayed("ASUS Full HD");
+
+      Logger.postCondition("Logout");
+      CommonPageMethods.logout();
+
+      Logger.postCondition("Limpiar carrito");
+      CartMethods.clearCart(username, password);
     }
   });
 
